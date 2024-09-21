@@ -234,3 +234,60 @@ mode = r,w,x,a,b,t,+
 read a file:
 --f.read --> to read a entire file
 --f.readline()--> reads one line at a time
+
+
+
+# extra--------------------
+In Python, list, tuple, and dictionary have different time complexities for their operations, and their use cases differ depending on the situation. Here’s a breakdown of their time complexities and when they are most applicable:
+
+1. List (list)
+A list is a dynamic array in Python that is mutable, meaning you can add, remove, or modify elements.
+
+Time Complexity for Common Operations:
+Access by index: O(1) (constant time)
+Search (in operation): O(n)
+Append (at the end): O(1)
+Insert (at arbitrary position): O(n) (since elements need to be shifted)
+Delete by index: O(n) (shifting elements)
+Pop (remove last element): O(1)
+Applicability:
+Use list when you need a collection of elements that may change in size (mutable).
+It is ideal when you want to frequently access elements by index, append to the list, or need to maintain an ordered collection.
+2. Tuple (tuple)
+A tuple is an immutable sequence in Python, meaning once it is created, it cannot be modified.
+
+Time Complexity for Common Operations:
+Access by index: O(1) (same as list)
+Search: O(n)
+Creation: O(n)
+Applicability:
+Use tuple when you have a fixed set of elements that shouldn't change (immutable).
+It is preferable when immutability provides safety or optimization, such as for keys in dictionaries or for representing fixed collections like coordinates or configurations.
+3. Dictionary (dict)
+A dict is a hash map or associative array that stores key-value pairs and allows for fast lookups, insertions, and deletions by key.
+
+Time Complexity for Common Operations:
+Access by key: O(1) average (but O(n) in worst cases with hash collisions)
+Search (by key): O(1) average
+Insert/Update: O(1) average
+Delete by key: O(1) average
+Applicability:
+Use dictionary when you need to map a set of unique keys to values.
+It is ideal when you want to access values quickly by a specific key (constant-time lookup) or when the order of elements doesn't matter as much as efficient key-value operations.
+Which One to Use in Which Situation:
+Use list when:
+
+You need a dynamic, mutable collection of elements.
+You want to maintain order and need to frequently access elements by index.
+You don't need fast lookups by key, but rather just need an ordered sequence.
+Use tuple when:
+
+You need an immutable collection of elements.
+Safety and memory optimization are important.
+The collection is fixed, like geographic coordinates, or will be used as a key in a dictionary.
+Use dict when:
+
+You need fast lookups by key.
+You need to associate unique keys with values, such as a phone book, an index, or a cache.
+Keys need to be immutable, but values can change.
+Each data structure has its strengths depending on the context, so choose based on whether you prioritize immutability, fast lookups, or dynamic resizing.
