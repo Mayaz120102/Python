@@ -291,3 +291,8 @@ You need fast lookups by key.
 You need to associate unique keys with values, such as a phone book, an index, or a cache.
 Keys need to be immutable, but values can change.
 Each data structure has its strengths depending on the context, so choose based on whether you prioritize immutability, fast lookups, or dynamic resizing.
+
+--Summary of Total Time Complexities:
+List: O(n) on average.
+Tuple: O(n) on average.
+Dictionary: O(1) on average, but O(n) in the worst case (due to hash collisions).
